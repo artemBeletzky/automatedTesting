@@ -1,11 +1,16 @@
+import { strict as assert } from "assert";
 import capitalize from "../src/capitalize.js";
 
-if (capitalize("hello") !== "Hello") {
-  throw new Error("Функция работает неверно!");
-}
+assert.strictEqual(
+  capitalize("hello"),
+  "Hello",
+  "This function doesn't work properly"
+);
 
-if (capitalize("") !== "") {
-  throw new Error("Функция работает неверно!");
-}
+assert.strictEqual(
+  capitalize(""),
+  "",
+  "The string should empty if empty string is passed as an argument."
+);
 
-console.log("Все тесты пройдены!");
+console.log("All tests passed!");
